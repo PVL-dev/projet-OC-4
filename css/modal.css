@@ -8,8 +8,8 @@
   margin: 0;
   padding: 0;
 }
-/* Landing Page */
 
+/* Landing Page */
 body {
   margin: 0;
   display: flex;
@@ -30,6 +30,7 @@ img {
   padding-right: 1rem;
 }
 
+/* Menu nav */
 .topnav {
   overflow: hidden;
   margin: 3.5%;
@@ -135,8 +136,6 @@ main {
   font-family: var(--font-slab);
 }
 
-/* Modal form */
-
 .button {
   background: #fe142f;
   margin-top: 0.5em;
@@ -155,6 +154,10 @@ main {
   font-size: 16px;
 }
 
+
+
+
+/* Modal form */
 .bground {
   display: none;
   position: fixed;
@@ -188,6 +191,31 @@ main {
   .content {
     margin: 5% 1%;
   }
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 3px;
+  background-color: #fff;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }
 
 .modal-body {
@@ -301,29 +329,10 @@ input[data-error]::after {
   top: 19%;
 }
 
-.close {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 32px;
-  height: 32px;
-  opacity: 1;
-  cursor: pointer;
-  transform: scale(0.7);
-}
-.close:before, .close:after {
-  position: absolute;
-  left: 15px;
-  content: " ";
-  height: 33px;
-  width: 3px;
-  background-color: #fff;
-}
-.close:before {
-  transform: rotate(45deg);
-}
-.close:after {
-  transform: rotate(-45deg);
+.text-label {
+  font-weight: normal;
+  font-size: 16px;
+  margin-top: 12px;
 }
 
 .btn-submit, .btn-signup {
@@ -341,7 +350,7 @@ input[data-error]::after {
   margin-top: 10px;
 }
 
-/* custom select styles */
+/* Custom select styles -------------------------------------------------------------------- */
 .custom-select {
   position: relative;
   font-family: Arial;
@@ -405,13 +414,12 @@ input[data-error]::after {
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+/* Custom select end -------------------------------------------------------------------- */
 
-/* custom select end */
-.text-label {
-  font-weight: normal;
-  font-size: 16px;
-  margin-top: 12px;
-}
+
+
+
+/* Hero section */
 .hero-section {
   min-height: 93vh;
   border-radius: 10px;
@@ -421,6 +429,7 @@ input[data-error]::after {
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
+
 .hero-content {
   padding: 51px 67px;
   grid-column: span 4;
@@ -454,13 +463,7 @@ input[data-error]::after {
   margin-top: 57px;
   padding: 0;
 }
-.btn-signup {
-  outline: none;
-  font-size: 1.3rem;
-  padding: 15px 23px;
-  margin: 0;
-  margin-top: 59px;
-}
+
 .hero-img {
   grid-column: span 8;
 }
@@ -470,20 +473,16 @@ input[data-error]::after {
   display: block;
   padding: 0;
 }
-.copyrights {
-  color: #fe142f;
-  padding: 0;
-  font-size: 1rem;
-  margin: 60px 0 30px;
-  font-weight: bolder;
+
+.btn-signup {
+  outline: none;
+  font-size: 1.3rem;
+  padding: 15px 23px;
+  margin: 0;
+  margin-top: 59px;
 }
 .hero-section > .btn-signup {
   display: none;
-}
-footer {
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 0 20px;
 }
 @media screen and (max-width: 800px) {
   .hero-section {
@@ -522,12 +521,35 @@ footer {
     margin: 32px auto 10px;
     padding: 12px 35px;
   }
+}
+
+
+
+
+/* Footer */
+footer {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 0 20px;
+}
+.copyrights {
+  color: #fe142f;
+  padding: 0;
+  font-size: 1rem;
+  margin: 60px 0 30px;
+  font-weight: bolder;
+}
+@media screen and (max-width: 800px) {
   .copyrights {
     margin-top: 50px;
     text-align: center;
   }
 }
 
+
+
+
+/* Animations keyframes */
 @keyframes modalopen {
   from {
     opacity: 0;
