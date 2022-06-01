@@ -167,14 +167,16 @@ main {
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
+  animation: modalclose var(--modal-duration);
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
 }
 
 .content {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
+  animation: modalopen var(--modal-duration);
   background: #232323;
   border-radius: 10px;
   overflow: hidden;
@@ -296,6 +298,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
+
 .close {
   position: absolute;
   right: 15px;
@@ -306,8 +309,7 @@ input[data-error]::after {
   cursor: pointer;
   transform: scale(0.7);
 }
-.close:before,
-.close:after {
+.close:before, .close:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -321,8 +323,8 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
-.btn-submit,
-.btn-signup {
+
+.btn-submit, .btn-signup {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -524,6 +526,15 @@ footer {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes modalclose {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
