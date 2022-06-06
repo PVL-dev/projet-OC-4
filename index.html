@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Reservation</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="css/modal.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link
-      href="https://fonts.googleapis.com/css?family=DM+Sans"
-      rel="stylesheet"
-    />
+    <meta charset="utf-8"/>
+    <title>GameOn</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="css/modal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans"/>
+    <link rel="icon" type="image/png" href="images/Favicon.png"/>
   </head>
 
   <body>
@@ -39,14 +37,14 @@
           <p class="hero-text">
             Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !
           </p>
-          <button class="btn-signup modal-btn"> <!-- Bouton version Desktop -->
+          <button class="btn-signup modal-btn"> <!-- Bouton "Je m'inscris" version Desktop -->
             Je m'inscris
           </button>
         </div>
         <div class="hero-img">
           <img src="images/bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn"> <!-- Bouton version Mobile -->
+        <button class="btn-signup modal-btn"> <!-- Bouton "Je m'inscris" version Mobile -->
           Je m'inscris
         </button>
       </div>
@@ -56,29 +54,31 @@
           <span class="close"></span>
           <div class="modal-body">
             <form
-              name="reserve"
-              action="index.html"
-              method="get"
-              onsubmit="return validate();"
+              id="inscriptionForm"
+              name="inscriptionForm"
+              method="POST"
+              onsubmit="return validate()"
             >
               <div class="formData">
-                <label for="first">Prénom</label><br>
+                <label for="firstName">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
-                  id="first"
-                  name="first"
+                  id="firstName"
+                  name="firstName"
                   minlength="2"
+                  required
                 />
               </div>
 
               <div class="formData">
-                <label for="last">Nom</label><br>
+                <label for="lastName">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
-                  id="last"
-                  name="last"
+                  id="lastName"
+                  name="lastName"
+                  required
                 />
               </div>
 
@@ -89,6 +89,7 @@
                   type="email"
                   id="email"
                   name="email"
+                  required
                 />
               </div>
 
@@ -99,6 +100,7 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
+                  required
                 />
               </div>
 
@@ -109,12 +111,13 @@
                   type="number"
                   id="quantity"
                   name="quantity"
+                  required
                   min="0"
                   max="99">
               </div>
 
               <p class="text-label">À quel tournoi souhaitez-vous participer cette année ?</p>
-              <div class="formData">
+              <div id="locationsContainer" class="formData">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -187,6 +190,7 @@
                   Portland
                 </label>
               </div>
+              <span id="locationError"></span>
 
               <div class="formData">
                 <input
@@ -197,7 +201,8 @@
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
                   J'ai lu et j'accepte les conditions d'utilisation.
-                </label>
+                </label><br>
+                <span id="termsError"></span>
 
                 <input 
                   class="checkbox-input"
