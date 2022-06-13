@@ -37,14 +37,14 @@
           <p class="hero-text">
             Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !
           </p>
-          <button class="btn-signup modal-btn"> <!-- Bouton "Je m'inscris" version Desktop -->
+          <button class="btn-signup register-btn"> <!-- Bouton "Je m'inscris" version Desktop -->
             Je m'inscris
           </button>
         </div>
         <div class="hero-img">
           <img src="images/bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn"> <!-- Bouton "Je m'inscris" version Mobile -->
+        <button class="btn-signup register-btn"> <!-- Bouton "Je m'inscris" version Mobile -->
           Je m'inscris
         </button>
       </div>
@@ -67,9 +67,9 @@
                   id="firstName"
                   name="firstName"
                   minlength="2"
-                  required
                 />
               </div>
+              <span id="firstNameError" class="errorMsg"></span>
 
               <div class="formData">
                 <label for="lastName">Nom</label><br>
@@ -78,9 +78,9 @@
                   type="text"
                   id="lastName"
                   name="lastName"
-                  required
                 />
               </div>
+              <span id="lastNameError" class="errorMsg"></span>
 
               <div class="formData">
                 <label for="email">E-mail</label><br>
@@ -89,9 +89,9 @@
                   type="email"
                   id="email"
                   name="email"
-                  required
                 />
               </div>
+              <span id="emailError" class="errorMsg"></span>
 
               <div class="formData">
                 <label for="birthdate">Date de naissance</label><br>
@@ -100,9 +100,9 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                  required
                 />
               </div>
+              <span id="birthdateError" class="errorMsg"></span>
 
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
@@ -111,10 +111,10 @@
                   type="number"
                   id="quantity"
                   name="quantity"
-                  required
                   min="0"
                   max="99">
               </div>
+              <span id="quantityError" class="errorMsg"></span>
 
               <p class="text-label">À quel tournoi souhaitez-vous participer cette année ?</p>
               <div id="locationsContainer" class="formData">
@@ -190,7 +190,7 @@
                   Portland
                 </label>
               </div>
-              <span id="locationError"></span>
+              <span id="locationError" class="errorMsg"></span>
 
               <div class="formData">
                 <input
@@ -202,7 +202,7 @@
                   <span class="checkbox-icon"></span>
                   J'ai lu et j'accepte les conditions d'utilisation.
                 </label><br>
-                <span id="termsError"></span>
+                <span id="termsError" class="errorMsg"></span>
 
                 <input 
                   class="checkbox-input"
@@ -222,6 +222,13 @@
               />
             </form>
           </div>
+        </div>
+      </div>
+
+      <div class="confirmModal__container">
+        <div id="confirmModal">
+          <div class="confirmModal__close"></div>
+          <p>Votre inscription est confirmée !</p>
         </div>
       </div>
     </main>
