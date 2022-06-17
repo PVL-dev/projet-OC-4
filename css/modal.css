@@ -50,12 +50,13 @@ img {
   text-decoration: none;
   font-size: 20px;
   font-family: Roboto, sans-serif;
+  border-radius: 15px;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
 }
 
 .topnav a.active {
@@ -331,6 +332,10 @@ input[data-error]::after {
 }
 .btn-submit {
   margin-top: 10px;
+  transition: background 0.2s;
+}
+.btn-submit:hover {
+  background: #3876ac;
 }
 
 /* Custom select styles -------------------------------------------------------------------- */
@@ -467,6 +472,7 @@ input[data-error]::after {
   padding: 0.75rem 2.5rem;
   border-radius: 1rem;
   cursor: pointer;
+  transition: background 0.2s;
 }
 .register-btn:hover {
   background: #3876ac;
